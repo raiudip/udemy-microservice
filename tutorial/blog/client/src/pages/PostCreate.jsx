@@ -7,9 +7,11 @@ const PostCreate = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
 
-    await axios.post("http://localhost:4000/posts", {
-      title,
-    });
+    title.length
+      ? await axios.post("http://lo calhost:4000/posts", {
+          title,
+        })
+      : alert("Post cant be empty!");
 
     setTitle("");
   };
