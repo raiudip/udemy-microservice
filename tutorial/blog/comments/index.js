@@ -2,11 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const { randomBytes } = require("crypto");
-<<<<<<< HEAD
 const axios = require("axios");
-=======
-const axios = require('axios');
->>>>>>> github_origin/sanushnew
 
 const app = express();
 app.use(cors());
