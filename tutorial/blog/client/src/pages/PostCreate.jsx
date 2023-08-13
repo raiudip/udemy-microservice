@@ -8,7 +8,7 @@ const PostCreate = () => {
     event.preventDefault();
 
     title.length
-      ? await axios.post("http://lo calhost:4000/posts", {
+      ? await axios.post("http://localhost:4000/posts", {
           title,
         })
       : alert("Post cant be empty!");
