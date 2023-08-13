@@ -31,12 +31,11 @@ app.post("/posts", async (req, res) => {
   res.status(201).send(posts[id]);
 });
 
-// Post request handler
-app.post("/events", async (req, res) => {
-  console.log("Received Event", req.body.type);
+app.post('/events', (req, res) => {
+  console.log('Received Event', req.body.type);
 
   res.send({});
-});
+})
 
 // Server
 app.listen(4000, () => {
