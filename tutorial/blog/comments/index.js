@@ -21,7 +21,7 @@ app.post("/posts/:id/comments", async (req, res) => {
   const { content } = req.body;
 
   const comments = commentsByPostId[req.params.id] || [];
-  comments.push({ id: commentId, content });
+  comments.push({ id: commentId, content, status:'pending' });
 
   commentsByPostId[req.params.id] = comments;
 
@@ -30,7 +30,8 @@ app.post("/posts/:id/comments", async (req, res) => {
     data: {
       id: commentId,
       content,
-      postId: req.params.id
+      postId: req.params.id, 
+      status:'pending'
     }
   });
 
@@ -39,6 +40,23 @@ app.post("/posts/:id/comments", async (req, res) => {
 
 app.post('/events', (req, res) => {
   console.log('Event Recevied', req.body.type);
+  const{type, data}= req.body;
+  if(type=='CommentModerated'){
+    const{postId, id, status}= data;
+
+    const post = posts[postId];
+    post.comments.push({id, content, status});
+  }
+
+  if(type=="CommentUpdate"){
+    const{id, content, postId, status} = req.body;
+    const post = post[postId];
+    const comment = post.comments.find(comment =>{
+      return comment.id ==id;
+    })
+    comment.status = status
+    comment.content = content
+  }
 
   res.send({});
 })
