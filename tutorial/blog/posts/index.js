@@ -31,19 +31,11 @@ app.post("/posts", async (req, res) => {
   res.status(201).send(posts[id]);
 });
 
-<<<<<<< HEAD
-app.post('/events', (req, res) => {
-  console.log('Received Event', req.body.type);
-
-  res.send({});
-})
-=======
 app.post("/events", (req, res) => {
   console.log("Received Event", req.body.type);
 
   res.send({});
 });
->>>>>>> origin/udip
 
 // Server
 app.listen(4000, () => {
