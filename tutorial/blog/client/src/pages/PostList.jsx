@@ -7,6 +7,8 @@ const PostList = () => {
   const didMountRef = useRef(false);
   const [posts, setPosts] = useState({});
 
+  console.log("Current Posts", posts);
+
   useEffect(() => {
     if (!didMountRef.current) {
       didMountRef.current = true;
@@ -27,7 +29,7 @@ const PostList = () => {
       >
         <div
           className="card-body"
-          style={{ width: "60%", marginBottom: "20px" }}
+          style={{ width: "100%", marginBottom: "20px" }}
         >
           <h3>{post.title}</h3>
           <CommentList comments={post.comments} />
