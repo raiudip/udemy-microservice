@@ -7,12 +7,14 @@ const PostList = () => {
   const didMountRef = useRef(false);
   const [posts, setPosts] = useState({});
 
+  console.log("Current Posts", posts);
+
   useEffect(() => {
     if (!didMountRef.current) {
       didMountRef.current = true;
       const fetchPosts = async () => {
         const res = await axios.get("http://localhost:4002/posts");
-
+        console.log(res.data);
         setPosts(res.data);
       };
       fetchPosts();
@@ -23,7 +25,7 @@ const PostList = () => {
     return (
       <div
         className="card"
-        style={{ width: "30%", marginBottom: "20px" }}
+        style={{ width: "40%", marginBottom: "20px" }}
         key={post.id}
       >
         <div
