@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: comments
-          image: raiudip/comments
+          image: adhikarisunil339/comments
 ---
 apiVersion: v1
 kind: Service

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: client
-          image: raiudip/client
+          image: adhikarisunil339/client
 
 ---
 apiVersion: v1
