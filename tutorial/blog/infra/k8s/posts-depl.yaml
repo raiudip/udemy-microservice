@@ -27,4 +27,8 @@ spec:
     - name: posts
       protocol: TCP
       port: 4000
+<<<<<<< HEAD
       targetPort: 4000
+=======
+      targetPort: 4000
+>>>>>>> db51af7682fa3bd65a9aa01fda7475426c3436da
