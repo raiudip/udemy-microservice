@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: query
-          image: raiudip/query
+          image: kalyanlimbu10/query
 ---
 apiVersion: v1
 kind: Service

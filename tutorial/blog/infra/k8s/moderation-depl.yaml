@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: moderation
-          image: raiudip/moderation
+          image: kalyanlimbu10/moderation
 ---
 apiVersion: v1
 kind: Service

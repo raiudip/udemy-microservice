@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: event-bus
-          image: raiudip/event-bus
+          image: kalyanlimbu10/event-bus
 ---
 apiVersion: v1
 kind: Service
