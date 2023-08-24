@@ -10,15 +10,14 @@ declare global {
 
 jest.mock("../nats-wrapper");
 
-process.env.STRIPE_KEY =
-  "sk_test_51NiWl8SEEbayuWTMEIWZLAs1MPEZCIPvXDznPikgWYZ8rj2udIhEcJYjhOV2W8RX3Z0PqpocuTIUlfJ0BV597jml008oSa93eO";
+process.env.STRIPE_KEY = "sk_test_hnfrAm8rOkryFEnV23jjfFlw";
 
 let mongo: any;
 beforeAll(async () => {
   process.env.JWT_KEY = "asdfasdf";
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
-  mongo = await MongoMemoryServer.create();
+  const mongo = await MongoMemoryServer.create();
   const mongoUri = mongo.getUri();
 
   await mongoose.connect(mongoUri, {});
@@ -59,6 +58,5 @@ global.signin = (id?: string) => {
   // Take JSON and encode it as base64
   const base64 = Buffer.from(sessionJSON).toString("base64");
 
-  // return a string thats the cookie with the encoded data
   return [`session=${base64}`];
 };
